@@ -16,7 +16,8 @@ export const SyncEventSchema = z.object({
   op: SyncOperationSchema,
 
   // For UPSERT: payload is required. For DELETE: payload can be null.
-  payload: z.unknown().nullable()
+  payload: z.unknown().nullable().default(null)
+
 });
 
 export type SyncEvent = z.infer<typeof SyncEventSchema>;
