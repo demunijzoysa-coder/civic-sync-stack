@@ -1,0 +1,20 @@
+services:
+  db:
+    image: postgres:16
+    container_name: civic-sync-db
+    environment:
+      POSTGRES_USER: civic
+      POSTGRES_PASSWORD: civic
+      POSTGRES_DB: civic_sync
+    ports:
+      - "5432:5432"
+    volumes:
+      - civic_sync_db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U civic -d civic_sync"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+volumes:
+  civic_sync_db:
