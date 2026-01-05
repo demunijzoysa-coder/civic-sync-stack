@@ -142,3 +142,24 @@ vite.config.ts.timestamp-*
 .env
 .env.*
 !.env.example
+
+
+# Build outputs
+dist/
+**/dist/
+
+# pnpm / node
+node_modules/
+.pnpm-store/
+
+# build outputs
+dist/
+**/dist/
+
+# environment files
+.env
+.env.*
+!.env.example
+
+# local logs
+*.log
