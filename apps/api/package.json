@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "build": "tsc -p tsconfig.json",
+    "migrate": "tsx src/migrate.ts",
     "start": "node dist/server.js",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "clean": "rimraf dist"
@@ -15,6 +16,8 @@
     "@civic/sync-core": "workspace:*",
     "fastify": "^4.28.1",
     "pino-pretty": "^11.2.2",
+    "postgres": "^3.4.7",
     "zod": "^3.23.8"
   }
+  
 }
